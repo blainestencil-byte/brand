@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Northwest Registered Agent — Brand Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy:    #1F5082;
+    --blue:    #448CCE;
+    --dark:    #13384F;
+    --green:   #008761;
+    --teal:    #009E75;
+    --yellow:  #D9E021;
+    --amber:   #DD9E2D;
+    --coral:   #E5784B;
+    --cream:   #E6E5DD;
+    --warm:    #D6CFC8;
+    --black:   #242424;
+    --light:   #F0F0F0;
+    --grad1-a: #98E0F5;
+    --grad1-b: #D9E021;
+    --grad2-a: #8FBAE2;
+    --grad2-b: #66B7A0;
+    --font: 'Montserrat', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--font);
+    background: var(--light);
+    color: var(--black);
+    min-height: 100vh;
+  }
+
+  /* ─── TOP NAV ─────────────────────────────────────────── */
+  #topnav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: var(--dark);
+    display: flex;
+    align-items: center;
+    height: 58px;
+    padding: 0 32px;
+    gap: 6px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+  }
+
+  .nav-logo {
+    font-size: 13px;
+    font-weight: 900;
+    letter-spacing: 0.12em;
+    color: white;
+    text-transform: uppercase;
+    margin-right: 24px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  .nav-logo span.nw { color: white; font-weight: 900; font-size: 16px; }
+  .nav-logo span.ra { color: var(--yellow); font-weight: 900; font-size: 16px; }
+  .nav-logo span.sub { font-size: 9px; font-weight: 500; letter-spacing: 0.18em; color: rgba(255,255,255,0.5); }
+
+  .nav-divider { width: 1px; height: 28px; background: rgba(255,255,255,0.15); margin: 0 8px; }
+
+  .nav-btn {
+    background: none;
+    border: none;
+    font-family: var(--font);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: all 0.2s;
+    white-space: nowrap;
+    position: relative;
+  }
+  .nav-btn:hover { color: white; background: rgba(255,255,255,0.08); }
+  .nav-btn.active { color: var(--yellow); }
+  .nav-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px; left: 50%;
+    transform: translateX(-50%);
+    width: 20px; height: 2px;
+    background: var(--yellow);
+    border-radius: 2px;
+  }
+
+  .nav-btn.fundamentals {
+    background: var(--navy);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .nav-btn.fundamentals:hover { background: var(--blue); color: white; }
+  .nav-btn.fundamentals.active { background: var(--blue); color: white; }
+
+  /* ─── PAGE WRAPPER ────────────────────────────────────── */
+  #app {
+    padding-top: 58px;
+    min-height: 100vh;
+  }
+
+  /* ─── VIEWS ───────────────────────────────────────────── */
+  .view { display: none; }
+  .view.active { display: block; }
+
+  /* ─── HOME PAGE ───────────────────────────────────────── */
+  #home-hero {
+    background: linear-gradient(135deg, var(--dark) 0%, var(--navy) 50%, #1a4a7a 100%);
+    color: white;
+    padding: 100px 64px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  #home-hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(68,140,206,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  #home-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: 30%;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(217,224,33,0.08) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--yellow);
+    margin-bottom: 20px;
+  }
+  .hero-title {
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 12px;
+  }
+  .hero-title span { color: var(--yellow); }
+  .hero-subtitle {
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 0.04em;
+    margin-bottom: 48px;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  /* Fundamentals card */
+  .fundamentals-card {
+    background: linear-gradient(135deg, var(--blue), var(--navy));
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 12px;
+    padding: 36px 40px;
+    max-width: 680px;
+    margin-bottom: 64px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .fundamentals-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 200px; height: 200px;
+    background: radial-gradient(circle at top right, rgba(217,224,33,0.15), transparent 70%);
+  }
+  .fundamentals-card:hover { transform: translateY(-3px); box-shadow: 0 16px 48px rgba(0,0,0,0.3); }
+  .fund-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--yellow); margin-bottom: 10px;
+  }
+  .fund-title { font-size: 28px; font-weight: 800; color: white; margin-bottom: 8px; }
+  .fund-desc { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.6; max-width: 480px; }
+  .fund-arrow {
+    position: absolute; right: 40px; top: 50%; transform: translateY(-50%);
+    font-size: 32px; color: rgba(255,255,255,0.3);
+  }
+
+  /* Team grid */
+  .home-section-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: rgba(255,255,255,0.4);
+    margin-bottom: 20px;
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 12px;
+    max-width: 900px;
+  }
+  .team-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 20px 24px;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .team-card:hover {
+    background: rgba(255,255,255,0.12);
+    border-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+  }
+  .team-card.has-content { border-left: 3px solid var(--yellow); }
+  .team-card-icon { font-size: 20px; margin-bottom: 4px; }
+  .team-card-name { font-size: 13px; font-weight: 700; color: white; letter-spacing: 0.02em; }
+  .team-card-desc { font-size: 11px; color: rgba(255,255,255,0.45); line-height: 1.4; }
+  .team-card-badge {
+    display: inline-block; font-size: 9px; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 20px;
+    background: var(--yellow); color: var(--dark);
+    margin-top: 4px; width: fit-content;
+  }
+  .team-card-soon {
+    display: inline-block; font-size: 9px; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 20px;
+    background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.4);
+    margin-top: 4px; width: fit-content;
+  }
+
+  /* ─── GENERIC SECTION PAGE ────────────────────────────── */
+  .section-header {
+    background: var(--navy);
+    padding: 60px 64px 48px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+  .section-header::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 4px;
+    background: linear-gradient(90deg, var(--yellow), var(--blue));
+  }
+  .section-eyebrow {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.25em;
+    text-transform: uppercase; color: var(--yellow); margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: clamp(32px, 4vw, 56px);
+    font-weight: 900; letter-spacing: -0.02em;
+    line-height: 1; margin-bottom: 16px;
+  }
+  .section-intro {
+    font-size: 15px; font-weight: 400; line-height: 1.7;
+    color: rgba(255,255,255,0.65); max-width: 640px;
+  }
+
+  .section-body { padding: 64px; max-width: 1100px; }
+
+  /* Content blocks */
+  .content-block { margin-bottom: 64px; }
+  .block-title {
+    font-size: 22px; font-weight: 800; letter-spacing: -0.01em;
+    color: var(--dark); margin-bottom: 6px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--cream);
+  }
+  .block-subtitle {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--blue);
+    margin-bottom: 24px; margin-top: 4px;
+  }
+
+  /* Callout boxes */
+  .callout {
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .callout.navy { background: var(--navy); color: white; }
+  .callout.blue { background: rgba(68,140,206,0.1); border-left: 4px solid var(--blue); }
+  .callout.yellow { background: rgba(217,224,33,0.12); border-left: 4px solid var(--yellow); }
+  .callout.green { background: rgba(0,135,97,0.08); border-left: 4px solid var(--green); }
+  .callout.coral { background: rgba(229,120,75,0.08); border-left: 4px solid var(--coral); }
+  .callout.cream { background: var(--cream); border-left: 4px solid var(--warm); }
+
+  .callout-label {
+    font-size: 9px; font-weight: 800; letter-spacing: 0.22em;
+    text-transform: uppercase; margin-bottom: 10px;
+    opacity: 0.6;
+  }
+  .callout.navy .callout-label { color: var(--yellow); opacity: 1; }
+  .callout-title { font-size: 17px; font-weight: 800; margin-bottom: 8px; }
+  .callout p { font-size: 14px; line-height: 1.7; }
+  .callout.navy p { color: rgba(255,255,255,0.8); }
+
+  /* Do/Don't grid */
+  .do-dont-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
+  .do-box, .dont-box {
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .do-box { background: rgba(0,135,97,0.07); border: 1px solid rgba(0,135,97,0.2); }
+  .dont-box { background: rgba(229,120,75,0.07); border: 1px solid rgba(229,120,75,0.2); }
+  .do-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--green);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+  }
+  .dont-label {
+    font-size: 10px; font-weight: 800; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--coral);
+    margin-bottom: 14px; display: flex; align-items: center; gap: 6px;
+  }
+  .do-dont-item {
+    font-size: 13px; line-height: 1.6; padding: 8px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    display: flex; align-items: flex-start; gap: 8px;
+  }
+  .do-dont-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .do-dont-item .check { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* Formula card */
+  .formula-card {
+    background: var(--dark);
+    color: white;
+    border-radius: 12px;
+    padding: 36px 40px;
+    margin-bottom: 24px;
+  }
+  .formula-card h4 {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--yellow);
+    margin-bottom: 20px;
+  }
+  .formula-row {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    align-items: start;
+  }
+  .formula-row:last-child { border-bottom: none; padding-bottom: 0; }
+  .formula-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--blue);
+    padding-top: 3px;
+  }
+  .formula-content { font-size: 14px; line-height: 1.6; }
+  .formula-content strong { color: var(--yellow); font-weight: 700; }
+  .formula-example {
+    display: inline-block; margin-top: 8px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px; padding: 8px 14px;
+    font-size: 13px; font-style: italic; color: rgba(255,255,255,0.75);
+  }
+
+  /* Hierarchy list */
+  .hierarchy-list { list-style: none; }
+  .hierarchy-item {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--cream);
+  }
+  .hierarchy-item:last-child { border-bottom: none; }
+  .hierarchy-num {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--navy); color: white;
+    font-size: 13px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .hierarchy-text h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .hierarchy-text p { font-size: 13px; color: #666; line-height: 1.5; }
+  .hierarchy-text .quote {
+    font-style: italic; font-size: 12px;
+    color: var(--blue); margin-top: 4px;
+  }
+
+  /* Pill tags */
+  .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .pill {
+    font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+    padding: 6px 14px; border-radius: 20px;
+  }
+  .pill.navy { background: var(--navy); color: white; }
+  .pill.blue { background: rgba(68,140,206,0.15); color: var(--navy); }
+  .pill.green { background: rgba(0,135,97,0.12); color: var(--green); }
+  .pill.yellow { background: rgba(217,224,33,0.2); color: #7a7e00; }
+  .pill.coral { background: rgba(229,120,75,0.12); color: #c4522a; }
+
+  /* Checklist */
+  .checklist { list-style: none; }
+  .checklist li {
+    padding: 10px 0;
+    border-bottom: 1px solid var(--cream);
+    font-size: 14px; line-height: 1.6;
+    display: flex; align-items: flex-start; gap: 10px;
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist .icon { flex-shrink: 0; margin-top: 2px; }
+
+  /* Tone traits */
+  .trait-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+  }
+  .trait-card {
+    background: white;
+    border: 1px solid var(--cream);
+    border-radius: 10px;
+    padding: 24px;
+    border-top: 3px solid var(--blue);
+  }
+  .trait-card.green-top { border-top-color: var(--green); }
+  .trait-card.yellow-top { border-top-color: var(--yellow); }
+  .trait-name { font-size: 16px; font-weight: 800; margin-bottom: 8px; color: var(--dark); }
+  .trait-desc { font-size: 13px; line-height: 1.6; color: #666; }
+
+  /* Pillar cards */
+  .pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+  .pillar-card {
+    background: white;
+    border: 1px solid var(--cream);
+    border-radius: 10px;
+    padding: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .pillar-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--navy), var(--blue));
+  }
+  .pillar-name { font-size: 15px; font-weight: 800; color: var(--dark); margin-bottom: 12px; }
+  .pillar-items { list-style: none; }
+  .pillar-items li {
+    font-size: 13px; line-height: 1.6; color: #555;
+    padding: 5px 0; border-bottom: 1px solid var(--cream);
+    display: flex; gap: 8px; align-items: flex-start;
+  }
+  .pillar-items li:last-child { border-bottom: none; }
+
+  /* Decision flow */
+  .decision-flow { max-width: 640px; }
+  .decision-step {
+    background: white;
+    border: 1px solid var(--cream);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 8px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .decision-q {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: var(--blue); color: white;
+    font-size: 12px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .decision-text { font-size: 14px; line-height: 1.6; }
+  .decision-text strong { color: var(--dark); }
+
+  /* Contact grid */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
+  }
+  .contact-card {
+    background: white;
+    border: 1px solid var(--cream);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  .contact-role {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--blue); margin-bottom: 8px;
+  }
+  .contact-name { font-size: 16px; font-weight: 700; color: var(--dark); }
+  .contact-scope { font-size: 12px; color: #888; margin-top: 4px; line-height: 1.4; }
+
+  /* Resource list */
+  .resource-list { list-style: none; }
+  .resource-item {
+    padding: 14px 20px;
+    background: white;
+    border: 1px solid var(--cream);
+    border-radius: 8px;
+    margin-bottom: 8px;
+    display: flex; gap: 14px; align-items: flex-start;
+  }
+  .resource-icon { font-size: 18px; flex-shrink: 0; }
+  .resource-name { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+  .resource-desc { font-size: 12px; color: #888; line-height: 1.4; }
+
+  /* Coming soon */
+  .coming-soon {
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    min-height: 400px; text-align: center;
+    padding: 64px;
+  }
+  .coming-soon-icon { font-size: 48px; margin-bottom: 20px; }
+  .coming-soon h3 { font-size: 24px; font-weight: 800; color: var(--dark); margin-bottom: 10px; }
+  .coming-soon p { font-size: 15px; color: #888; max-width: 400px; line-height: 1.7; }
+
+  /* Trademark callout */
+  .trademark-table { width: 100%; border-collapse: collapse; }
+  .trademark-table th {
+    font-size: 10px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--blue);
+    padding: 10px 16px; text-align: left;
+    background: rgba(68,140,206,0.06);
+    border-bottom: 2px solid var(--blue);
+  }
+  .trademark-table td {
+    padding: 14px 16px;
+    font-size: 14px;
+    border-bottom: 1px solid var(--cream);
+  }
+  .trademark-table tr:last-child td { border-bottom: none; }
+  .trademark-table .mark { font-weight: 700; color: var(--dark); }
+
+  /* Section divider */
+  .section-divider {
+    height: 4px;
+    background: linear-gradient(90deg, var(--yellow) 0%, var(--blue) 50%, transparent 100%);
+    margin: 48px 0;
+    border-radius: 2px;
+    max-width: 200px;
+  }
+
+  /* Back breadcrumb */
+  .breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    padding: 16px 64px;
+    background: var(--cream);
+    border-bottom: 1px solid var(--warm);
+    font-size: 12px; color: #888;
+  }
+  .breadcrumb a {
+    color: var(--navy); font-weight: 600; cursor: pointer;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  /* Scroll anchor */
+  .anchor { scroll-margin-top: 80px; }
+
+  /* ─── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 768px) {
+    #topnav { padding: 0 16px; gap: 2px; overflow-x: auto; }
+    .nav-btn { font-size: 9px; padding: 5px 8px; }
+    #home-hero, .section-header, .section-body { padding: 40px 24px; }
+    .team-grid { grid-template-columns: repeat(2, 1fr); }
+    .do-dont-grid { grid-template-columns: 1fr; }
+    .section-body { padding: 40px 24px; }
+    .formula-row { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════════
+     TOP NAVIGATION
+══════════════════════════════════════════════════════════ -->
+<nav id="topnav">
+  <a class="nav-logo" onclick="showView('home')">
+    <span class="nw">NW</span><span class="ra">RA</span>
+    <span class="sub">Brand&nbsp;Guide</span>
+  </a>
+  <div class="nav-divider"></div>
+  <button class="nav-btn fundamentals" onclick="showView('fundamentals')">The Fundamentals</button>
+  <button class="nav-btn" onclick="showView('paid-media')">Paid Media</button>
+  <button class="nav-btn" onclick="showView('landing-pages')">Landing Pages</button>
+  <button class="nav-btn" onclick="showView('social')">Social Perception</button>
+  <button class="nav-btn" onclick="showView('pr')">PR</button>
+  <button class="nav-btn" onclick="showView('notifications')">Notifications</button>
+  <button class="nav-btn" onclick="showView('uiux')">UI/UX</button>
+  <button class="nav-btn" onclick="showView('video')">Video</button>
+  <button class="nav-btn" onclick="showView('frontend')">Frontend</button>
+  <button class="nav-btn" onclick="showView('software')">Software</button>
+  <button class="nav-btn" onclick="showView('hospitality')">Hospitality</button>
+  <button class="nav-btn" onclick="showView('product')">Product</button>
+</nav>
+
+<div id="app">
+
+<!-- ═══════════════════════════════════════════════════════
+     HOME VIEW
+══════════════════════════════════════════════════════════ -->
+<div id="view-home" class="view active">
+  <div id="home-hero">
+    <div class="hero-eyebrow">Northwest Registered Agent</div>
+    <div class="hero-title">Brand <span>Guide</span></div>
+    <div class="hero-subtitle">Everything you need to represent Northwest consistently, confidently, and on-brand — across every channel, team, and touchpoint.</div>
+
+    <div class="fundamentals-card" onclick="showView('fundamentals')">
+      <div class="fund-label">Start Here</div>
+      <div class="fund-title">The Fundamentals</div>
+      <div class="fund-desc">Brand voice, messaging pillars, colors, typography, logo usage, and core design principles. The foundation everything else is built on.</div>
+      <div class="fund-arrow">→</div>
+    </div>
+
+    <div class="home-section-label">Team-Specific Guides</div>
+    <div class="team-grid">
+      <div class="team-card has-content" onclick="showView('paid-media')">
+        <div class="team-card-icon">🎯</div>
+        <div class="team-card-name">Paid Media</div>
+        <div class="team-card-desc">Ad copy formulas, campaign management, testing protocols</div>
+        <div class="team-card-badge">Available</div>
+      </div>
+      <div class="team-card" onclick="showView('landing-pages')">
+        <div class="team-card-icon">📄</div>
+        <div class="team-card-name">Landing Pages</div>
+        <div class="team-card-desc">Conversion-focused design and copy standards</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('social')">
+        <div class="team-card-icon">📱</div>
+        <div class="team-card-name">Social Perception</div>
+        <div class="team-card-desc">Platform tone, visual standards, community voice</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('pr')">
+        <div class="team-card-icon">📰</div>
+        <div class="team-card-name">Public Relations</div>
+        <div class="team-card-desc">Media messaging and spokesperson guidelines</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('notifications')">
+        <div class="team-card-icon">🔔</div>
+        <div class="team-card-name">Notifications</div>
+        <div class="team-card-desc">Email, SMS, and in-app notification tone and structure</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('uiux')">
+        <div class="team-card-icon">🖥️</div>
+        <div class="team-card-name">UI/UX</div>
+        <div class="team-card-desc">Interface design principles and component standards</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('video')">
+        <div class="team-card-icon">🎬</div>
+        <div class="team-card-name">Video</div>
+        <div class="team-card-desc">Motion, production, and visual storytelling standards</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('frontend')">
+        <div class="team-card-icon">⚡</div>
+        <div class="team-card-name">Frontend</div>
+        <div class="team-card-desc">Code standards and design implementation guidelines</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('software')">
+        <div class="team-card-icon">🛠️</div>
+        <div class="team-card-name">Software</div>
+        <div class="team-card-desc">Product development and brand consistency in code</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('hospitality')">
+        <div class="team-card-icon">🤝</div>
+        <div class="team-card-name">Hospitality</div>
+        <div class="team-card-desc">Customer experience and service brand standards</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+      <div class="team-card" onclick="showView('product')">
+        <div class="team-card-icon">📦</div>
+        <div class="team-card-name">Product &amp; Services</div>
+        <div class="team-card-desc">Product naming, descriptions, and positioning</div>
+        <div class="team-card-soon">Coming Soon</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     FUNDAMENTALS VIEW (placeholder)
+══════════════════════════════════════════════════════════ -->
+<div id="view-fundamentals" class="view">
+  <div class="breadcrumb">
+    <a onclick="showView('home')">Home</a> › The Fundamentals
+  </div>
+  <div class="section-header">
+    <div class="section-eyebrow">Core Brand Identity</div>
+    <div class="section-title">The Fundamentals</div>
+    <div class="section-intro">The foundation of everything Northwest. Brand voice, visual identity, messaging pillars, content strategy, and design principles — all in one place.</div>
+  </div>
+  <div class="section-body">
+    <div class="coming-soon">
+      <div class="coming-soon-icon">🏗️</div>
+      <h3>In Progress</h3>
+      <p>Content and Design fundamentals are being developed. This section will cover brand voice, messaging pillars, color usage, typography, logo standards, and photography guidelines.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     PAID MEDIA VIEW
+══════════════════════════════════════════════════════════ -->
+<div id="view-paid-media" class="view">
+  <div class="breadcrumb">
+    <a onclick="showView('home')">Home</a> › Paid Media
+  </div>
+  <div class="section-header">
+    <div class="section-eyebrow">Team Guide — Paid Media</div>
+    <div class="section-title">Paid Media</div>
+    <div class="section-intro">The rules, formulas, and frameworks that keep our paid campaigns performing. From ad copy structure to campaign management — everything the paid media team needs to move fast and stay on-brand.</div>
+  </div>
+
+  <div class="section-body">
+
+    <!-- WINNING FORMULA -->
+    <div class="content-block anchor" id="pm-formula">
+      <div class="block-title">Current Winning Formula</div>
+      <div class="block-subtitle">The non-negotiables that drive performance</div>
+
+      <div class="callout navy" style="margin-bottom:24px;">
+        <div class="callout-label">Performance Anchor</div>
+        <div class="callout-title">"$39 Northwest LLC"</div>
+        <p>This phrase is our proven performance anchor across all paid channels. Always tie price directly to the offer. <strong style="color:var(--yellow)">Never separate price from what customers get.</strong></p>
+      </div>
+
+      <div class="trait-grid">
+        <div class="trait-card">
+          <div class="trait-name">Price + Product Association</div>
+          <div class="trait-desc">Always tie price directly to the offer. "$39 Northwest LLC" is non-negotiable — don't break this pairing for any reason.</div>
+        </div>
+        <div class="trait-card green-top">
+          <div class="trait-name">Message Consistency</div>
+          <div class="trait-desc">Preserve winning copy even when campaigns evolve. Performance trumps novelty in high-spend channels.</div>
+        </div>
+        <div class="trait-card yellow-top">
+          <div class="trait-name">Secondary Offer Hierarchy</div>
+          <div class="trait-desc">Website/domain messaging consistently outperforms phone service or business address. Lead with website benefits.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- AD COPY FORMULA -->
+    <div class="content-block anchor" id="pm-copy">
+      <div class="block-title">Ad Copy Formula</div>
+      <div class="block-subtitle">Winning structure for every ad unit</div>
+
+      <div class="formula-card">
+        <h4>Winning Ad Structure</h4>
+        <div class="formula-row">
+          <div class="formula-label">Headline</div>
+          <div class="formula-content">
+            Price-anchored value proposition — lead with the number.<br>
+            <span class="formula-example">"$39 Northwest LLC + Custom Business Website"</span>
+          </div>
+        </div>
+        <div class="formula-row">
+          <div class="formula-label">Description</div>
+          <div class="formula-content">
+            Clear benefit tied to what's included. Focus on website/domain as secondary offer. Keep concise and action-oriented.
+          </div>
+        </div>
+        <div class="formula-row">
+          <div class="formula-label">CTA</div>
+          <div class="formula-content">
+            Direct, clear action.<br>
+            <span class="formula-example">"Learn More" &nbsp;·&nbsp; "Get Started" &nbsp;·&nbsp; "Form My LLC"</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="do-dont-grid">
+        <div class="do-box">
+          <div class="do-label"><span>✅</span> Approved Messaging</div>
+          <div class="do-dont-item"><span class="check">✅</span> "$39 Northwest LLC" framing (mandatory)</div>
+          <div class="do-dont-item"><span class="check">✅</span> Website/domain as secondary offer</div>
+          <div class="do-dont-item"><span class="check">✅</span> Copy that mirrors past high-performing ads</div>
+          <div class="do-dont-item"><span class="check">✅</span> Leadership-approved variations (get sign-off for new directions)</div>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label"><span>🚫</span> Stay Away From</div>
+          <div class="do-dont-item"><span class="check">❌</span> Leading with phone service or business address</div>
+          <div class="do-dont-item"><span class="check">❌</span> Removing price from core messaging</div>
+          <div class="do-dont-item"><span class="check">❌</span> Untested value props in high-spend campaigns</div>
+          <div class="do-dont-item"><span class="check">❌</span> Breaking proven message patterns for aesthetic reasons</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- BRAND VOICE -->
+    <div class="content-block anchor" id="pm-voice">
+      <div class="block-title">Brand Voice &amp; Messaging</div>
+      <div class="block-subtitle">Tone and required trademark usage</div>
+
+      <div class="trait-grid" style="margin-bottom:32px;">
+        <div class="trait-card">
+          <div class="trait-name">Whimsical</div>
+          <div class="trait-desc">Light, approachable, and never corporate. We sound like a person, not a press release.</div>
+        </div>
+        <div class="trait-card green-top">
+          <div class="trait-name">Informative but Conversational</div>
+          <div class="trait-desc">Helpful without being patronizing. We explain things clearly and simply.</div>
+        </div>
+        <div class="trait-card yellow-top">
+          <div class="trait-name">Opinionated Playfulness</div>
+          <div class="trait-desc">Confident recommendations without arrogance. We have a point of view and aren't afraid to share it.</div>
+        </div>
+      </div>
+
+      <div class="callout blue" style="margin-bottom:24px;">
+        <div class="callout-label">Trademark Usage — Required</div>
+        <p>Always include the ® symbol with these marks. No exceptions.</p>
+      </div>
+
+      <table class="trademark-table" style="margin-bottom:32px;">
+        <thead>
+          <tr>
+            <th>Mark</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td class="mark">We're Just Not Annoying®</td><td>Use on first mention in any piece of content</td></tr>
+          <tr><td class="mark">Corporate Guides®</td><td>Always ® — applies in ads, landing pages, and web copy</td></tr>
+          <tr><td class="mark">Privacy by Default®</td><td>Core differentiator — ® required every time</td></tr>
+        </tbody>
+      </table>
+
+      <div class="block-subtitle">Core Messaging Pillars</div>
+      <div class="pillar-grid">
+        <div class="pillar-card">
+          <div class="pillar-name">Business Identity</div>
+          <ul class="pillar-items">
+            <li><span>→</span> All-in-one solution built in-house</li>
+            <li><span>→</span> One place to launch, run, and grow</li>
+            <li><span>→</span> When You Want More</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-name">Privacy by Default®</div>
+          <ul class="pillar-items">
+            <li><span>→</span> Never sell data</li>
+            <li><span>→</span> Keep info off public records</li>
+            <li><span>→</span> Own buildings = unique business address</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-name">Independently Owned</div>
+          <ul class="pillar-items">
+            <li><span>→</span> No outside investors</li>
+            <li><span>→</span> Focus solely on customer benefit</li>
+            <li><span>→</span> Independent</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-name">Transparent Pricing</div>
+          <ul class="pillar-items">
+            <li><span>→</span> Fair and straightforward ($39 + state fees)</li>
+            <li><span>→</span> Add/cancel services easily</li>
+          </ul>
+        </div>
+        <div class="pillar-card">
+          <div class="pillar-name">Local Expertise</div>
+          <ul class="pillar-items">
+            <li><span>→</span> Real employees in every state</li>
+            <li><span>→</span> Corporate Guides® without scripts or time limits</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- TESTING -->
+    <div class="content-block anchor" id="pm-testing">
+      <div class="block-title">Testing &amp; Iteration</div>
+      <div class="block-subtitle">How to validate new ideas without risking performance</div>
+
+      <div class="callout yellow" style="margin-bottom:28px;">
+        <div class="callout-label">Golden Rule</div>
+        <p><strong>Always validate in lower-spend channels first.</strong> Never introduce unproven concepts into high-budget campaigns. If you want to test something new, earn it.</p>
+      </div>
+
+      <div class="block-subtitle" style="margin-top:0; margin-bottom:16px;">Performance Signal Hierarchy</div>
+      <ul class="hierarchy-list" style="margin-bottom:32px;">
+        <li class="hierarchy-item">
+          <div class="hierarchy-num">1</div>
+          <div class="hierarchy-text">
+            <h4>Past Performance Data</h4>
+            <p>Always ask: "Have we tested this before?" — if yes, use that data before anything else.</p>
+          </div>
+        </li>
+        <li class="hierarchy-item">
+          <div class="hierarchy-num">2</div>
+          <div class="hierarchy-text">
+            <h4>Leadership Feedback</h4>
+            <p>Dan's input often breaks ties when data is ambiguous or a new direction is being considered.</p>
+          </div>
+        </li>
+        <li class="hierarchy-item">
+          <div class="hierarchy-num">3</div>
+          <div class="hierarchy-text">
+            <h4>Similar Post-Change Results</h4>
+            <p>If performance holds steady after a copy refresh, that's a win — you didn't break what worked.</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="do-dont-grid">
+        <div class="do-box">
+          <div class="do-label"><span>✅</span> Safe to Test</div>
+          <div class="do-dont-item"><span class="check">✅</span> New secondary offers (validate in lower-spend channels first)</div>
+          <div class="do-dont-item"><span class="check">✅</span> Headline variations that maintain price anchor</div>
+          <div class="do-dont-item"><span class="check">✅</span> CTA refinements</div>
+          <div class="do-dont-item"><span class="check">✅</span> Audience segment variations</div>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label"><span>🚫</span> Never Test</div>
+          <div class="do-dont-item"><span class="check">❌</span> Core "$39 Northwest LLC" messaging</div>
+          <div class="do-dont-item"><span class="check">❌</span> Removing price from ads</div>
+          <div class="do-dont-item"><span class="check">❌</span> Switching primary offer from website to phone/address</div>
+          <div class="do-dont-item"><span class="check">❌</span> Unproven concepts in high-budget campaigns</div>
+        </div>
+      </div>
+
+      <div class="callout cream" style="margin-top:24px;">
+        <div class="callout-label">Testing Best Practices</div>
+        <ul class="checklist">
+          <li><span class="icon">📋</span> Reference past performance before launching new concepts</li>
+          <li><span class="icon">✋</span> Get leadership approval for significant messaging changes</li>
+          <li><span class="icon">📝</span> Document the test and its results</li>
+          <li><span class="icon">🤝</span> Share learnings with landing page team for alignment</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- CAMPAIGN MANAGEMENT -->
+    <div class="content-block anchor" id="pm-campaigns">
+      <div class="block-title">Campaign Management</div>
+      <div class="block-subtitle">Pre-launch, targeting, and team coordination</div>
+
+      <div class="callout cream" style="margin-bottom:28px;">
+        <div class="callout-label">Pre-Launch Checklist</div>
+        <ul class="checklist">
+          <li><span class="icon">✅</span> Sync messaging with corresponding landing page</li>
+          <li><span class="icon">✅</span> Verify tracking setup and attribution</li>
+          <li><span class="icon">✅</span> Confirm budget and targeting parameters</li>
+          <li><span class="icon">✅</span> Get necessary approvals (content, leadership)</li>
+        </ul>
+      </div>
+
+      <div class="block-subtitle">Primary Audiences</div>
+      <div class="pill-row" style="margin-bottom:32px;">
+        <span class="pill navy">Entrepreneurs</span>
+        <span class="pill navy">Small Business Owners</span>
+        <span class="pill navy">New Business Starters</span>
+      </div>
+
+      <div class="callout blue">
+        <div class="callout-label">Coordination Note</div>
+        <p>Coordinate with landing page team on targeting — they benefit from PPC's audience work, which reduces education burden on page design. Communicate with Content, Design, FE, and PPC for alignment.</p>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- DECISION FRAMEWORK -->
+    <div class="content-block anchor" id="pm-decisions">
+      <div class="block-title">Decision-Making Framework</div>
+      <div class="block-subtitle">What to ask yourself when uncertain about copy</div>
+
+      <div class="decision-flow" style="margin-bottom:32px;">
+        <div class="decision-step">
+          <div class="decision-q">1</div>
+          <div class="decision-text"><strong>Have we tested this messaging before?</strong><br>Check the campaign archive first. Use existing data before inventing new answers.</div>
+        </div>
+        <div class="decision-step">
+          <div class="decision-q">2</div>
+          <div class="decision-text"><strong>Does it preserve the "$39 Northwest LLC" anchor?</strong><br>And does it use Kitchen Sink offer language?</div>
+        </div>
+        <div class="decision-step">
+          <div class="decision-q">3</div>
+          <div class="decision-text"><strong>Does it lead with website as secondary offer?</strong><br>Not phone service. Not business address. Website first.</div>
+        </div>
+        <div class="decision-step">
+          <div class="decision-q">4</div>
+          <div class="decision-text"><strong>Does it feel aligned to Northstar concepts?</strong><br>When You Want More · Independent · Privacy · Transparent Pricing</div>
+        </div>
+      </div>
+
+      <div class="block-subtitle">Escalation Path</div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-role">Ad Copy</div>
+          <div class="contact-name">Danny</div>
+          <div class="contact-scope">Review required for major copy changes</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-role">Brand Questions</div>
+          <div class="contact-name">Brand Guide</div>
+          <div class="contact-scope">Reference for core positioning and tone</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-role">Performance Data</div>
+          <div class="contact-name">Campaign Archive</div>
+          <div class="contact-scope">Past performance data and test results</div>
+        </div>
+        <div class="contact-card">
+          <div class="contact-role">Landing Page Alignment</div>
+          <div class="contact-name">Marketing Associates</div>
+          <div class="contact-scope">Coordinate for message/campaign consistency</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- QUICK REFERENCE -->
+    <div class="content-block anchor" id="pm-quick">
+      <div class="block-title">Quick Reference</div>
+      <div class="block-subtitle">Every ad, every time</div>
+
+      <div class="do-dont-grid">
+        <div class="do-box">
+          <div class="do-label"><span>✅</span> Every Ad Should Have</div>
+          <div class="do-dont-item"><span class="check">✅</span> "$39 Northwest LLC" phrase</div>
+          <div class="do-dont-item"><span class="check">✅</span> Website/domain as secondary benefit</div>
+          <div class="do-dont-item"><span class="check">✅</span> Clear, direct CTA</div>
+          <div class="do-dont-item"><span class="check">✅</span> Appropriate trademark symbols (®)</div>
+          <div class="do-dont-item"><span class="check">✅</span> Alignment with corresponding landing page</div>
+          <div class="do-dont-item"><span class="check">✅</span> Proven messaging patterns</div>
+        </div>
+        <div class="dont-box">
+          <div class="dont-label"><span>🚫</span> Things to Avoid</div>
+          <div class="do-dont-item"><span class="check">❌</span> Price not associated with product</div>
+          <div class="do-dont-item"><span class="check">❌</span> Phone/address leading the message</div>
+          <div class="do-dont-item"><span class="check">❌</span> Breaking proven copy patterns</div>
+          <div class="do-dont-item"><span class="check">❌</span> Untested concepts in high-spend campaigns</div>
+          <div class="do-dont-item"><span class="check">❌</span> Missing trademark symbols</div>
+          <div class="do-dont-item"><span class="check">❌</span> Misalignment with landing page messaging</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-divider"></div>
+
+    <!-- KEY RESOURCES -->
+    <div class="content-block anchor" id="pm-resources">
+      <div class="block-title">Key Resources</div>
+      <div class="block-subtitle">Where to go for more</div>
+
+      <ul class="resource-list">
+        <li class="resource-item">
+          <span class="resource-icon">🗂️</span>
+          <div>
+            <div class="resource-name">Kitchen Sink Messaging Framework</div>
+            <div class="resource-desc">Foundation for all Northwest content — the source of truth for offer language and value propositions.</div>
+          </div>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">📘</span>
+          <div>
+            <div class="resource-name">Brand Guide</div>
+            <div class="resource-desc">Core positioning and tone guidance — see The Fundamentals section of this guide.</div>
+          </div>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">📊</span>
+          <div>
+            <div class="resource-name">Campaign Archive</div>
+            <div class="resource-desc">Past performance data and test results — always check here before launching something new.</div>
+          </div>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">👤</span>
+          <div>
+            <div class="resource-name">Customer Personas (Alison Burr)</div>
+            <div class="resource-desc">Targeting guidance — understand who we're speaking to before writing copy.</div>
+          </div>
+        </li>
+        <li class="resource-item">
+          <span class="resource-icon">🤝</span>
+          <div>
+            <div class="resource-name">Landing Page + Marketing Associate Teams</div>
+            <div class="resource-desc">Coordinate for message/campaign consistency — submit tickets with Content/Design/FE leads tagged.</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- end section-body -->
+</div><!-- end paid-media view -->
+
+<!-- ═══════════════════════════════════════════════════════
+     COMING SOON VIEWS
+══════════════════════════════════════════════════════════ -->
+<div id="view-landing-pages" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Landing Pages</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Landing Pages</div><div class="section-intro">Conversion-focused design and copy standards for every landing page.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">📄</div><h3>Coming Soon</h3><p>Landing Pages guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-social" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Social Perception</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Social Perception</div><div class="section-intro">Platform tone, visual standards, and community voice guidelines.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">📱</div><h3>Coming Soon</h3><p>Social Perception guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-pr" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Public Relations</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Public Relations</div><div class="section-intro">Media messaging, spokesperson guidelines, and press standards.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">📰</div><h3>Coming Soon</h3><p>PR guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-notifications" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Notifications</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Notifications</div><div class="section-intro">Email, SMS, and in-app notification tone and structure.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">🔔</div><h3>Coming Soon</h3><p>Notifications guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-uiux" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › UI/UX</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">UI/UX</div><div class="section-intro">Interface design principles and component standards.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">🖥️</div><h3>Coming Soon</h3><p>UI/UX guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-video" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Video</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Video</div><div class="section-intro">Motion, production, and visual storytelling standards.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">🎬</div><h3>Coming Soon</h3><p>Video guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-frontend" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Frontend</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Frontend</div><div class="section-intro">Code standards and design implementation guidelines.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">⚡</div><h3>Coming Soon</h3><p>Frontend guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-software" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Software</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Software</div><div class="section-intro">Product development and brand consistency in code.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">🛠️</div><h3>Coming Soon</h3><p>Software guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-hospitality" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Hospitality</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Hospitality</div><div class="section-intro">Customer experience and service brand standards.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">🤝</div><h3>Coming Soon</h3><p>Hospitality guide is being developed. Check back soon.</p></div></div>
+</div>
+
+<div id="view-product" class="view">
+  <div class="breadcrumb"><a onclick="showView('home')">Home</a> › Product &amp; Services</div>
+  <div class="section-header"><div class="section-eyebrow">Team Guide</div><div class="section-title">Product &amp; Services</div><div class="section-intro">Product naming, descriptions, and positioning standards.</div></div>
+  <div class="section-body"><div class="coming-soon"><div class="coming-soon-icon">📦</div><h3>Coming Soon</h3><p>Product &amp; Services guide is being developed. Check back soon.</p></div></div>
+</div>
+
+</div><!-- end #app -->
+
+<script>
+  const views = {
+    'home': 'view-home',
+    'fundamentals': 'view-fundamentals',
+    'paid-media': 'view-paid-media',
+    'landing-pages': 'view-landing-pages',
+    'social': 'view-social',
+    'pr': 'view-pr',
+    'notifications': 'view-notifications',
+    'uiux': 'view-uiux',
+    'video': 'view-video',
+    'frontend': 'view-frontend',
+    'software': 'view-software',
+    'hospitality': 'view-hospitality',
+    'product': 'view-product',
+  };
+
+  function showView(id) {
+    // Hide all views
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+
+    // Show target view
+    const viewEl = document.getElementById(views[id]);
+    if (viewEl) {
+      viewEl.classList.add('active');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Highlight nav button
+    const navBtns = document.querySelectorAll('.nav-btn');
+    navBtns.forEach(btn => {
+      const onclick = btn.getAttribute('onclick') || '';
+      if (onclick.includes("'" + id + "'")) btn.classList.add('active');
+    });
+  }
+
+  // Init
+  showView('home');
+</script>
+</body>
+</html>
